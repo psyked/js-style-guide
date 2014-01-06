@@ -76,11 +76,6 @@ Our JavaScript Style Guidelines are drawn from a combination of many sources, bu
 
 <div class='large-6 columns'>
 {{#markdown}}
-#### Want to contribute?
-<div class="large-4 left column">
-![Fork Me!](http://octodex.github.com/images/forktocat.jpg)
-</div>
-Our guidelines are [hosted on GitHub;](https://github.com/psyked/js-style-guide) so please, feel free to fork it and send us a pull request.
 {{/markdown}}
 </div>
 </div>
