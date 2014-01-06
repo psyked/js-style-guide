@@ -70,6 +70,7 @@ Our JavaScript Style Guidelines are drawn from a combination of many sources, bu
 - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwaldron/idiomatic.js/)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
+- [Render-blocking javascripts](http://www.feedthebot.com/pagespeed/render-blocking.html)
 {{/markdown}}
 </div>
 
