@@ -1,5 +1,5 @@
 ---
-title: MMT Digital's JavaScript Style Guide
+title: JavaScript Style Guide
 ---
 <div class='row'>
 <div class='large-4 columns'>
