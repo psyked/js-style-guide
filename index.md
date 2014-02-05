@@ -31,36 +31,6 @@ Background reading can get a little boring, so you can skip past that and onto t
 </div>
 </div>
 
-<div class='row' style='margin-top:1em'>
-<div class='large-6 columns'>
-{{#markdown}}
-## Source Code Formatting
-Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.
-
-<a href='summary.html' class='button'>Open the Summary now.</a>
-{{/markdown}}
-</div>
-
-<div class='large-6 columns'>
-{{#markdown}}
-## Naming Conventions
-Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.
-
-<a href='naming-conventions.html' class='button'>Open the Summary now.</a>
-{{/markdown}}
-</div>
-
-</div>
-<div class='row'>
-<div class='large-12 columns'>
-{{#markdown}}
-### Best Practice Guidelines
-Background reading can get a little boring, so you can skip past that and onto the good stuff by reading our summary.
-
-<a href='summary.html' class='button'>Open the Summary now.</a>
-{{/markdown}}
-</div>
-</div>
 <div class='row'>
 <div class='large-6 columns'>
 {{#markdown}}

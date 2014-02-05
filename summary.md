@@ -1,37 +1,45 @@
 ---
-title: Summary
+title: JavaScript Style Guide - Summary
 ---
 <div class='row'>
     <div class='large-12 columns'>
-    <h1><small>1. </small>Configure your <abbr title="Integrated Development Environment">IDE</abbr> <small>with Plugins & Config files.</small></h1>
-    <hr>
+        <h2><small>1. </small>Configure your <abbr title="Integrated Development Environment">IDE</abbr> <small>with Plugins & Config files.</small></h2>
+        <hr>
     </div>
-    <div class='large-6 columns'>{{md 'content/jshint.md'}}</div>
-    <div class='large-6 columns'>{{md 'content/editorconfig.md'}}</div>
+    <div class='large-12 columns'>{{md 'content/jshint.md'}}</div>
+    <div class='large-12 columns'>{{md 'content/editorconfig.md'}}</div>
 </div>
+
 <div class='row'>
-<div class='large-12 columns'>
-{{#markdown}}
-2. Use the proper formatting conventions.
------------------------------------------
-Use descriptive function and variable names, in the format:
-
-- `functionNamesLikeThis`
-- `variableNamesLikeThis`
-- `ClassNamesLikeThis`
-- `EnumNamesLikeThis`
-- `methodNamesLikeThis`
-- `CONSTANT_VALUES_LIKE_THIS`
-- `foo.namespaceNamesLikeThis.bar`
-- `filenameslikethis.js`
-
-Use a consistent vocabulary like is, has, set and get:
-
-- `function isReady()`
-- `function hasValue()`
-- `function setName()`
-- `function getName()`
-
-{{/markdown}}
+    <div class='large-12 columns'>
+        <h2><small>2. </small>Follow our naming conventions.</h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'>{{md 'content/descriptivenaming.md'}}</div>
+    <div class='large-12 columns'>{{md 'content/camelcase.md'}}</div>
 </div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>3. </small>Structure your code <small>sensibly.</small></h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'>{{md 'content/structure.md'}}</div></div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>4. </small>Comment minimally.</h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'>{{md 'content/comments.md'}}</div></div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+    <p>And finally;</p>
+        <h2 class='text-center'>Don't do stupid shit <small>and everything will be ok.</small></h2>
+        <p></p>
+        <p></p>
+    </div>
 </div>

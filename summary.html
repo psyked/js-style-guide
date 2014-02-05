@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta property="og:title" content="Summary"/>
+    <meta property="og:title" content="JavaScript Style Guide - Summary"/>
     <meta property="og:site_name" content="JavaScript Style Guide"/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_GB"/>
-    <title>Summary</title>
+    <title>JavaScript Style Guide - Summary</title>
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-144x144-precomposed.png">
     <link rel="icon" href="assets/icons/favicon.png">
     <!--[if IE]>
@@ -31,46 +31,30 @@
             </li>
             <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="left">
-                <li class="has-dropdown">
-                    <a href="./">Overview</a>
-                    <ul class="dropdown">
-                        <li><a href="summary.html">The short version</a></li>
-                        <li><a href="formatting.html">Source code formatting</a></li>
-                        <li><a href="naming-conventions.html">Naming Conventions</a></li>
-                        <li><a href="development-best-practices.html">JavaScript Best Practices</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
     </nav>
 </div></header>
 <main role="main">
     
     <div class="row">
         <div class="large-12 columns">
-            <h1>Summary</h1>
+            <h1>JavaScript Style Guide - Summary</h1>
             <hr/>
         </div>
     </div>
     
     <div class='row'>
     <div class='large-12 columns'>
-    <h1><small>1. </small>Configure your <abbr title="Integrated Development Environment">IDE</abbr> <small>with Plugins &amp; Config files.</small></h1>
-    <hr>
+        <h2><small>1. </small>Configure your <abbr title="Integrated Development Environment">IDE</abbr> <small>with Plugins &amp; Config files.</small></h2>
+        <hr>
     </div>
-    <div class='large-6 columns'><h3 id="add-a-jshint-http-www-jshint-com-about-file-">Add a <a href="http://www.jshint.com/about/">JSHint</a> file.</h3>
-<p><strong>Standard Practice:</strong>
-Create a <code>.jshintrc</code> file with the following content (or <a href="">download it here</a>), add it to the root of your project and validate your source code
+    <div class='large-12 columns'><h3 id="add-a-jshint-http-www-jshint-com-about-file-">Add a <a href="http://www.jshint.com/about/">JSHint</a> file.</h3>
+<p>Create a <code>.jshintrc</code> file with the following content (or <a href="">download it here</a>), add it to the root of your project and validate your source code
 against it during development.</p>
 <pre><code>{
   &#39;camelcase&#39; : true, // naming conventions
   &#39;indent&#39;: 4, // 4 space indent
   &#39;undef&#39;: true,
-  &#39;quotmark&#39;: &#39;single&#39;,
+  &#39;quotmark&#39;: &#39;single&#39;, // use single quotes
   &#39;maxlen&#39;: 120,
   &#39;trailing&#39;: true,
   &#39;curly&#39;: true, // always use curly braces
@@ -80,8 +64,8 @@ against it during development.</p>
   &#39;browser&#39;: true, // console.log, etc.
   &#39;jquery&#39;: true // adds $ as a valid function
 }</code></pre>
-<p><strong>Best Practice:</strong>
-Set up your IDE to continuously validate against the JSHint rules as you work, and have any Continuous Integration setup
+<h4 id="best-practice">Best Practice</h4>
+<p>Set up your IDE to continuously validate against the JSHint rules as you work, and have any Continuous Integration setup
  do the same.</p>
 <div class='panel'>
 <p><strong>Useful resources:</strong></p>
@@ -91,62 +75,69 @@ Set up your IDE to continuously validate against the JSHint rules as you work, a
 </ul>
 
 </div></div>
-    <div class='large-6 columns'><h3 id="sort-out-your-formatting-">Sort out your formatting.</h3>
-<p><strong>Standard Practice:</strong>
-Follow these simple rules for code formatting:</p>
+    <div class='large-12 columns'><h3 id="sort-out-your-auto-formatting-">Sort out your auto-formatting.</h3>
+<p>Configure your IDE to have it follow these few simple rules for code formatting.</p>
 <ul>
-<li>Keep your opening curly braces (<code>{</code>) <strong>on the same line</strong></li>
+<li>Use <strong>whitespace to improve the readability of your code</strong> (ie, don&#39;t auto-condense blank lines)</li>
+<li>Keep your opening braces (<code>{</code>) <strong>on the same line</strong></li>
 <li>Indent code with <strong>4 spaces</strong> (don&#39;t use tabs)</li>
-<li>Use <strong>single quotes</strong> for String declarations</li>
-<li>Use a single space after colons (<code>:</code>), around evaluations and before <code>{</code>, like this:</li>
+<li>Use <strong>single quotes</strong> in strings</li>
+<li>Use a single space after colons (<code>:</code>), around operators, keywords and parenthesis (<code>{</code>/<code>}</code>), but not within them.</li>
+<li><strong>Remove trailing whitespace</strong> from lines of code</li>
+<li>Always use semicolons (<code>;</code>) at the end of lines (and don’t rely on implicit insertion.)</li>
 </ul>
-<pre><code>if(var i = 0, l = 10; i &lt; l; i++) {
-    // stuff
+<p>You may also wish to have your IDE display hidden characters (newlines, spaces, tabs), which will make these errors
+easier to spot. And remember, too much whitespace throughout your code can make it just as hard to read as too little.</p>
+<p>Ideally, your formatted code should look something like this:</p>
+<pre><code>function foo(x, y, z) {
+    bar(1, b);
+    var i = 0;
+    var x = {0: &quot;zero&quot;, 1: &quot;one&quot;};
+
+    var foo = function foo() {
+        // stuff
+    };
+
+    if (!i &gt; 10) {
+        for (var j = 0; j &lt; 10; j++) {
+            switch (j) {
+                case 0:
+                    value = &quot;zero&quot;;
+                    break;
+                case 1:
+                    value = &quot;one&quot;;
+                    break;
+            }
+            var c = j &gt; 5 ? &quot;GT 5&quot; : &quot;LE 5&quot;;
+        }
+    } else {
+        var j = 0;
+        try {
+            while (j &lt; 10) {
+                if (i == j || j &gt; 5) {
+                    a[j] = i + j * 12;
+                }
+                i = (j &lt;&lt; 2) &amp; 4;
+                j++;
+            }
+            do {
+                j--;
+            } while (j &gt; 0)
+        } catch (e) {
+            alert(&quot;Failure: &quot; + e.message);
+        } finally {
+            reset(a, i);
+        }
+    }
 }</code></pre>
-<ul>
-<li>Use whitespace to improve the readability of your code</li>
-<li>Move your <code>var</code> statements to the top of their scope (function)</li>
-<li>Use named functions instead of anonymous functions (you&#39;ll thank me at debug time)</li>
-</ul>
 <blockquote>
-<p>If in doubt;
-Consistency always wins.</p>
+<p>If in doubt, <em>Consistency always wins.</em></p>
 </blockquote>
-<p><strong>Best Practice:</strong>
-Use an <a href="http://editorconfig.org/">EditorConfig</a> file to set this up for you.
+<h4 id="best-practice">Best Practice</h4>
+<p>Use an <a href="http://editorconfig.org/">EditorConfig</a> file to set this up for you.
 Create an <code>.editorconfig</code> file in the root of your project, and then set up your IDE to use
 those settings when auto-formatting your code.</p>
 <pre><code>//todo: Add Sample file</code></pre>
-<!-- <pre><code class='no-highlight'># EditorConfig is awesome: http://EditorConfig.org
-
-# top-most EditorConfig file
-root = true
-
-# Unix-style newlines with a newline ending every file
-[*]
-end_of_line = lf
-insert_final_newline = true
-
-# 4 space indentation
-[*.py]
-indent_style = space
-indent_size = 4
-
-# Tab indentation (no size specified)
-[*.js]
-indent_style = tab
-
-# Indentation override for all JS under lib directory
-[lib/**.js]
-indent_style = space
-indent_size = 2
-
-# Matches the exact files package.json and .travis.yml
-[{package.json,.travis.yml}]
-indent_style = space
-indent_size = 2
-</code></pre> -->
-
 <div class='panel'>
 <p><strong>Useful resources:</strong></p>
 <ul>
@@ -156,29 +147,119 @@ indent_size = 2
 
 </div></div>
 </div>
-<div class='row'>
-<div class='large-12 columns'>
-<h2 id="2-use-the-proper-formatting-conventions-">2. Use the proper formatting conventions.</h2>
-<p>Use descriptive function and variable names, in the format:</p>
-<ul>
-<li><code>functionNamesLikeThis</code></li>
-<li><code>variableNamesLikeThis</code></li>
-<li><code>ClassNamesLikeThis</code></li>
-<li><code>EnumNamesLikeThis</code></li>
-<li><code>methodNamesLikeThis</code></li>
-<li><code>CONSTANT_VALUES_LIKE_THIS</code></li>
-<li><code>foo.namespaceNamesLikeThis.bar</code></li>
-<li><code>filenameslikethis.js</code></li>
-</ul>
-<p>Use a consistent vocabulary like is, has, set and get:</p>
-<ul>
-<li><code>function isReady()</code></li>
-<li><code>function hasValue()</code></li>
-<li><code>function setName()</code></li>
-<li><code>function getName()</code></li>
-</ul>
 
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>2. </small>Follow our naming conventions.</h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'><h3 id="use-descriptive-names-for-your-objects">Use Descriptive Names for your objects</h3>
+<p>Make your code more readable by using full, descriptive names for your functions, variables and
+objects. Don&#39;t try to save bytes by using short, terse variable names (with the exception of <code>i</code> in a loop).</p>
+<h4 id="best-practice">Best Practice</h4>
+<p>Don&#39;t try to express concepts such as the object type, its scope or anything else through a pseudo
+convention. <br>That means no <code>oObject</code> or <code>customersArray</code>, <code>_private</code> or <code>_this</code> variable names.</p>
+<h5 id="bad-code-">Bad code:</h5>
+<pre><code>// Example of code with poor names
+
+function q(s) {
+  return document.querySelectorAll(s);
+}
+var i,a=[],els=q(&quot;#foo&quot;);
+for(i=0;i&lt;els.length;i++){a.push(els[i]);}</code></pre>
+<h5 id="good-code-">Good code:</h5>
+<pre><code>// Example of code with improved names
+
+function query( selector ) {
+  return document.querySelectorAll( selector );
+}
+
+var idx = 0,
+  elements = [],
+  matches = query(&quot;#foo&quot;),
+  length = matches.length;
+
+for ( ; idx &lt; length; idx++ ) {
+  elements.push( matches[ idx ] );
+}</code></pre>
+<p>Also, pay attention to plural and non-plural names when coding:</p>
+<pre><code>var dog; // is a string
+
+var dogs; // is an array of dog strings</code></pre>
+<h3 id="use-a-consistent-vocabulary">Use a consistent vocabulary</h3>
+<p>Stick to an obvious set of keywords such as <code>is</code>, <code>has</code>, <code>set</code> and <code>get</code> for your simple accessor functions:</p>
+<pre><code>function isReady() {};
+function hasValue() {};
+function setName() {};
+function getName() {};</code></pre>
 </div>
+    <div class='large-12 columns'><h3 id="follow-the-camelcase-camelcase-naming-conventions">Follow the camelCase/CamelCase naming conventions</h3>
+<p>In addition to using descriptive names, we convey an objects&#39; type through the <strong>camelCase</strong> conventions. JavaScript
+isn&#39;t case-sensitive, but it promotes better clarity in our source code.</p>
+<h5 id="functions-variable-declarations">Functions &amp; variable declarations</h5>
+<p>Use lower camelCase. Compound words, where each word begins with a capital letter, with the exception of the first letter.</p>
+<pre><code>var myReallyLongVariableName;
+
+function myReallyLongComplicatedFunctionName() {
+    // stuff
+}</code></pre>
+<h5 id="class-declarations">Class declarations</h5>
+<p>Use upper CamelCase. Compound words, where each word begins with a capital letter, including the first letter.</p>
+<pre><code>var ClassName = function ClassName() {
+    // stuff
+};</code></pre>
+<h5 id="constants">Constants</h5>
+<p>Are signified with ALLCAPS and separate words signified by underscores.</p>
+<pre><code>var MY_CONSTANT = 42;</code></pre>
+<h5 id="nested-properties">Nested properties</h5>
+<p>Are best accessed via dot-notation, rather than <code>eval</code> blocks. (Eval is Evil)</p>
+<h5 id="filenames">Filenames</h5>
+<p>Use all-lowercase file names, and preferably separate words with dots rather than hyphenating filenames.</p>
+<p><code>my.complicated.filename.js</code> rather than <code>my-complicated-filename.js</code></p>
+</div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>3. </small>Structure your code <small>sensibly.</small></h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'><h3 id="organise-your-source-code">Organise your source code</h3>
+<ul>
+<li>Group your variable declarations together, and add them to the top of the function they&#39;re scoped into.</li>
+<li>Use named functions instead of anonymous functions (you&#39;ll thank me at debug time)</li>
+</ul>
+<h4 id="best-practice">Best Practice</h4>
+<p>Don&#39;t nest your function declarations - doing so means that the nested functions are evaluated when the parent function
+is executed, which prevents a lot of browser pre-optimisation and can get confusing to track the scope of variables used
+in the function itself. Abstract those functions, or change their scope and be more explicit about the parameters passed
+into that function.</p>
+</div></div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>4. </small>Comment minimally.</h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'><p>If your variables and function names are descriptive enough, <strong>you shouldn&#39;t need comments</strong> in your code to describe how
+anything works. However, there&#39;s always that <em>one weird issue.</em> And for that issue, our recommendations are:</p>
+<ul>
+<li>Single line above the code that is subject</li>
+<li>Multiline is good</li>
+<li>End of line comments are prohibited!</li>
+<li>JSDoc style is good, but requires a significant time investment</li>
+</ul>
+</div></div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+    <p>And finally;</p>
+        <h2 class='text-center'>Don&#39;t do stupid shit <small>and everything will be ok.</small></h2>
+        <p></p>
+        <p></p>
+    </div>
 </div>
 
 

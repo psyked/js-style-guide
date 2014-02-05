@@ -1,60 +1,70 @@
-### Sort out your formatting.
-**Standard Practice:**
-Follow these simple rules for code formatting:
+### Sort out your auto-formatting.
 
-- Keep your opening curly braces (`{`) **on the same line**
+Configure your IDE to have it follow these few simple rules for code formatting.
+
+- Use **whitespace to improve the readability of your code** (ie, don't auto-condense blank lines)
+- Keep your opening braces (`{`) **on the same line**
 - Indent code with **4 spaces** (don't use tabs)
-- Use **single quotes** for String declarations
-- Use a single space after colons (`:`), around evaluations and before `{`, like this:
+- Use **single quotes** in strings
+- Use a single space after colons (`:`), around operators, keywords and parenthesis (`{`/`}`), but not within them.
+- **Remove trailing whitespace** from lines of code
+- Always use semicolons (`;`) at the end of lines (and don’t rely on implicit insertion.)
 
+You may also wish to have your IDE display hidden characters (newlines, spaces, tabs), which will make these errors
+easier to spot. And remember, too much whitespace throughout your code can make it just as hard to read as too little.
 
-    if(var i = 0, l = 10; i < l; i++) {
-        // stuff
+Ideally, your formatted code should look something like this:
+
+    function foo(x, y, z) {
+        bar(1, b);
+        var i = 0;
+        var x = {0: "zero", 1: "one"};
+
+        var foo = function foo() {
+            // stuff
+        };
+
+        if (!i > 10) {
+            for (var j = 0; j < 10; j++) {
+                switch (j) {
+                    case 0:
+                        value = "zero";
+                        break;
+                    case 1:
+                        value = "one";
+                        break;
+                }
+                var c = j > 5 ? "GT 5" : "LE 5";
+            }
+        } else {
+            var j = 0;
+            try {
+                while (j < 10) {
+                    if (i == j || j > 5) {
+                        a[j] = i + j * 12;
+                    }
+                    i = (j << 2) & 4;
+                    j++;
+                }
+                do {
+                    j--;
+                } while (j > 0)
+            } catch (e) {
+                alert("Failure: " + e.message);
+            } finally {
+                reset(a, i);
+            }
+        }
     }
 
-- Use whitespace to improve the readability of your code
-- Move your `var` statements to the top of their scope (function)
-- Use named functions instead of anonymous functions (you'll thank me at debug time)
+> If in doubt, _Consistency always wins._
 
-> If in doubt;
-> Consistency always wins.
-
-**Best Practice:**
+#### Best Practice
 Use an [EditorConfig](http://editorconfig.org/) file to set this up for you.
 Create an `.editorconfig` file in the root of your project, and then set up your IDE to use
 those settings when auto-formatting your code.
 
     //todo: Add Sample file
-
-<!-- <pre><code class='no-highlight'># EditorConfig is awesome: http://EditorConfig.org
-
-# top-most EditorConfig file
-root = true
-
-# Unix-style newlines with a newline ending every file
-[*]
-end_of_line = lf
-insert_final_newline = true
-
-# 4 space indentation
-[*.py]
-indent_style = space
-indent_size = 4
-
-# Tab indentation (no size specified)
-[*.js]
-indent_style = tab
-
-# Indentation override for all JS under lib directory
-[lib/**.js]
-indent_style = space
-indent_size = 2
-
-# Matches the exact files package.json and .travis.yml
-[{package.json,.travis.yml}]
-indent_style = space
-indent_size = 2
-</code></pre> -->
 
 <div class='panel'>
 {{#markdown}}
