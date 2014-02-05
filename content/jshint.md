@@ -10,7 +10,7 @@ against it during development.
       'quotmark': 'single',
       'maxlen': 120,
       'trailing': true,
-      'curly': true,
+      'curly': true, // always use curly braces
       'es3': true, // for backwards compatible code
       'strict': true, // for predictable code
       'eqeqeq': true, // === instead of ==
@@ -25,7 +25,7 @@ Set up your IDE to continuously validate against the JSHint rules as you work, a
 <div class='panel'>
 {{#markdown}}
 **Useful resources:**
-- [Configuring WebStorm to use JSHint](http://www.jetbrains.com/webstorm/webhelp/using-javascript-code-quality-tools.html)
 - [About JSHint](http://www.jshint.com/about/)
+- [Configuring WebStorm to use JSHint](http://www.jetbrains.com/webstorm/webhelp/using-javascript-code-quality-tools.html)
 {{/markdown}}
 </div>

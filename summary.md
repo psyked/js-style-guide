@@ -32,9 +32,6 @@ Use a consistent vocabulary like is, has, set and get:
 - `function setName()`
 - `function getName()`
 
-Use whitespace as outlined by the [Idiomatic JavaScript Style Guide](https://github.com/rwaldron/idiomatic.js/#spacing)
-
-Braces go on the same line, not a new line.
 {{/markdown}}
 </div>
 </div>

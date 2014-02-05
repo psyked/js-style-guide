@@ -73,7 +73,7 @@ against it during development.</p>
   &#39;quotmark&#39;: &#39;single&#39;,
   &#39;maxlen&#39;: 120,
   &#39;trailing&#39;: true,
-  &#39;curly&#39;: true,
+  &#39;curly&#39;: true, // always use curly braces
   &#39;es3&#39;: true, // for backwards compatible code
   &#39;strict&#39;: true, // for predictable code
   &#39;eqeqeq&#39;: true, // === instead of ==
@@ -86,38 +86,58 @@ Set up your IDE to continuously validate against the JSHint rules as you work, a
 <div class='panel'>
 <p><strong>Useful resources:</strong></p>
 <ul>
-<li><a href="http://www.jetbrains.com/webstorm/webhelp/using-javascript-code-quality-tools.html">Configuring WebStorm to use JSHint</a></li>
 <li><a href="http://www.jshint.com/about/">About JSHint</a></li>
+<li><a href="http://www.jetbrains.com/webstorm/webhelp/using-javascript-code-quality-tools.html">Configuring WebStorm to use JSHint</a></li>
 </ul>
 
 </div></div>
-    <div class='large-6 columns'><h3 id="sort-out-your-auto-formatting-">Sort out your auto-formatting.</h3>
-<p><strong>Standard Practice:</strong></p>
+    <div class='large-6 columns'><h3 id="sort-out-your-formatting-">Sort out your formatting.</h3>
+<p><strong>Standard Practice:</strong>
+Follow these simple rules for code formatting:</p>
+<ul>
+<li>Keep your opening curly braces (<code>{</code>) <strong>on the same line</strong></li>
+<li>Indent code with <strong>4 spaces</strong> (don&#39;t use tabs)</li>
+<li>Use <strong>single quotes</strong> for String declarations</li>
+<li>Use a single space after colons (<code>:</code>), around evaluations and before <code>{</code>, like this:</li>
+</ul>
+<pre><code>if(var i = 0, l = 10; i &lt; l; i++) {
+    // stuff
+}</code></pre>
+<ul>
+<li>Use whitespace to improve the readability of your code</li>
+<li>Move your <code>var</code> statements to the top of their scope (function)</li>
+<li>Use named functions instead of anonymous functions (you&#39;ll thank me at debug time)</li>
+</ul>
+<blockquote>
+<p>If in doubt;
+Consistency always wins.</p>
+</blockquote>
 <p><strong>Best Practice:</strong>
-Add an <a href="http://editorconfig.org/">EditorConfig</a> file.
-Create an <code>.editorconfig</code> file with the following content in the root of your project, and then set up your IDE to use
-those settings for auto-formatting your code.</p>
-<pre><code class='no-highlight'># EditorConfig is awesome: <a href="http://EditorConfig.org">http://EditorConfig.org</a>
+Use an <a href="http://editorconfig.org/">EditorConfig</a> file to set this up for you.
+Create an <code>.editorconfig</code> file in the root of your project, and then set up your IDE to use
+those settings when auto-formatting your code.</p>
+<pre><code>//todo: Add Sample file</code></pre>
+<!-- <pre><code class='no-highlight'># EditorConfig is awesome: http://EditorConfig.org
 
 # top-most EditorConfig file
 root = true
 
 # Unix-style newlines with a newline ending every file
-[<em>]
+[*]
 end_of_line = lf
 insert_final_newline = true
 
 # 4 space indentation
-[</em>.py]
+[*.py]
 indent_style = space
 indent_size = 4
 
 # Tab indentation (no size specified)
-[<em>.js]
+[*.js]
 indent_style = tab
 
 # Indentation override for all JS under lib directory
-[lib/*</em>.js]
+[lib/**.js]
 indent_style = space
 indent_size = 2
 
@@ -125,12 +145,16 @@ indent_size = 2
 [{package.json,.travis.yml}]
 indent_style = space
 indent_size = 2
-</code></pre>
+</code></pre> -->
 
+<div class='panel'>
+<p><strong>Useful resources:</strong></p>
 <ul>
+<li><a href="http://editorconfig.org/">About EditorConfig</a></li>
 <li><a href="https://github.com/editorconfig/editorconfig-jetbrains#readme">Configuring WebStorm to use EditorConfig</a></li>
 </ul>
-</div>
+
+</div></div>
 </div>
 <div class='row'>
 <div class='large-12 columns'>
@@ -153,8 +177,6 @@ indent_size = 2
 <li><code>function setName()</code></li>
 <li><code>function getName()</code></li>
 </ul>
-<p>Use whitespace as outlined by the <a href="https://github.com/rwaldron/idiomatic.js/#spacing">Idiomatic JavaScript Style Guide</a></p>
-<p>Braces go on the same line, not a new line.</p>
 
 </div>
 </div>
