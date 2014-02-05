@@ -52,40 +52,50 @@
     
     <div class="row">
         <div class="large-12 columns">
-            <h1>The “Too long; didn’t read” Style Guide</h1>
+            <h1>Summary</h1>
             <hr/>
         </div>
     </div>
     
     <div class='row'>
-<div class='large-12 columns'>
-<h2 id="1-configure-your-ide-with-files-plugins">1. Configure your IDE with Files &amp; Plugins</h2>
-<p></div></p>
-<p><div class='large-6 columns'></p>
-<h3 id="use-a-jshint-http-www-jshint-com-about-file-">Use a <a href="http://www.jshint.com/about/">JSHint</a> file.</h3>
-<p>Create a <code>.jshintrc</code> file with the following content in the root of your project, and configure your IDE to continually
-validate your source code against those settings during development.</p>
+    <div class='large-12 columns'>
+    <h1><small>1. </small>Configure your <abbr title="Integrated Development Environment">IDE</abbr> <small>with Plugins &amp; Config files.</small></h1>
+    <hr>
+    </div>
+    <div class='large-6 columns'><h3 id="add-a-jshint-http-www-jshint-com-about-file-">Add a <a href="http://www.jshint.com/about/">JSHint</a> file.</h3>
+<p><strong>Standard Practice:</strong>
+Create a <code>.jshintrc</code> file with the following content (or <a href="">download it here</a>), add it to the root of your project and validate your source code
+against it during development.</p>
 <pre><code>{
-  &#39;camelcase&#39; : true,
-  &#39;indent&#39;: 4,
+  &#39;camelcase&#39; : true, // naming conventions
+  &#39;indent&#39;: 4, // 4 space indent
   &#39;undef&#39;: true,
   &#39;quotmark&#39;: &#39;single&#39;,
   &#39;maxlen&#39;: 120,
   &#39;trailing&#39;: true,
   &#39;curly&#39;: true,
-  &#39;es3&#39;: true,
-  &#39;strict&#39;: true,
-  &#39;eqeqeq&#39;: true,
-  &#39;browser&#39;: true,
-  &#39;jquery&#39;: true
+  &#39;es3&#39;: true, // for backwards compatible code
+  &#39;strict&#39;: true, // for predictable code
+  &#39;eqeqeq&#39;: true, // === instead of ==
+  &#39;browser&#39;: true, // console.log, etc.
+  &#39;jquery&#39;: true // adds $ as a valid function
 }</code></pre>
+<p><strong>Best Practice:</strong>
+Set up your IDE to continuously validate against the JSHint rules as you work, and have any Continuous Integration setup
+ do the same.</p>
+<div class='panel'>
+<p><strong>Useful resources:</strong></p>
 <ul>
 <li><a href="http://www.jetbrains.com/webstorm/webhelp/using-javascript-code-quality-tools.html">Configuring WebStorm to use JSHint</a></li>
+<li><a href="http://www.jshint.com/about/">About JSHint</a></li>
 </ul>
-<p></div></p>
-<p><div class='large-6 columns'></p>
-<h3 id="use-an-editorconfig-http-editorconfig-org-file-">Use an <a href="http://editorconfig.org/">EditorConfig</a> file.</h3>
-<p>Create an <code>.editorconfig</code> file with the following content in the root of your project, and then set up your IDE to use
+
+</div></div>
+    <div class='large-6 columns'><h3 id="sort-out-your-auto-formatting-">Sort out your auto-formatting.</h3>
+<p><strong>Standard Practice:</strong></p>
+<p><strong>Best Practice:</strong>
+Add an <a href="http://editorconfig.org/">EditorConfig</a> file.
+Create an <code>.editorconfig</code> file with the following content in the root of your project, and then set up your IDE to use
 those settings for auto-formatting your code.</p>
 <pre><code class='no-highlight'># EditorConfig is awesome: <a href="http://EditorConfig.org">http://EditorConfig.org</a>
 
@@ -118,11 +128,12 @@ indent_size = 2
 </code></pre>
 
 <ul>
-<li><a href="https://github.com/editorconfig/editorconfig-jetbrains#readme">Configuring WebStorm to use EditorConfig</a>
-</div>
-</div>
-<div class='row'><div class='large-12 columns'></li>
+<li><a href="https://github.com/editorconfig/editorconfig-jetbrains#readme">Configuring WebStorm to use EditorConfig</a></li>
 </ul>
+</div>
+</div>
+<div class='row'>
+<div class='large-12 columns'>
 <h2 id="2-use-the-proper-formatting-conventions-">2. Use the proper formatting conventions.</h2>
 <p>Use descriptive function and variable names, in the format:</p>
 <ul>
