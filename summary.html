@@ -75,7 +75,7 @@ against it during development.</p>
 </ul>
 
 </div></div>
-    <div class='large-12 columns'><h3 id="sort-out-your-auto-formatting-">Sort out your auto-formatting.</h3>
+    <!-- <div class='large-12 columns'><h3 id="sort-out-your-auto-formatting-">Sort out your auto-formatting.</h3>
 <p>Configure your IDE to have it follow these few simple rules for code formatting.</p>
 <ul>
 <li>Use <strong>whitespace to improve the readability of your code</strong> (ie, don&#39;t auto-condense blank lines)</li>
@@ -145,7 +145,7 @@ those settings when auto-formatting your code.</p>
 <li><a href="https://github.com/editorconfig/editorconfig-jetbrains#readme">Configuring WebStorm to use EditorConfig</a></li>
 </ul>
 
-</div></div>
+</div></div> -->
 </div>
 
 <div class='row'>
@@ -193,29 +193,31 @@ function hasValue() {};
 function setName() {};
 function getName() {};</code></pre>
 </div>
-    <div class='large-12 columns'><h3 id="follow-the-camelcase-camelcase-naming-conventions">Follow the camelCase/CamelCase naming conventions</h3>
+    <div class='large-12 columns'><h3 id="use-camelcase-camelcase-correctly">Use camelCase/CamelCase correctly</h3>
 <p>In addition to using descriptive names, we convey an objects&#39; type through the <strong>camelCase</strong> conventions. JavaScript
 isn&#39;t case-sensitive, but it promotes better clarity in our source code.</p>
-<h5 id="functions-variable-declarations">Functions &amp; variable declarations</h5>
+<h4 id="functions-variable-declarations">Functions &amp; variable declarations</h4>
 <p>Use lower camelCase. Compound words, where each word begins with a capital letter, with the exception of the first letter.</p>
 <pre><code>var myReallyLongVariableName;
 
 function myReallyLongComplicatedFunctionName() {
     // stuff
 }</code></pre>
-<h5 id="class-declarations">Class declarations</h5>
+<h4 id="class-declarations">Class declarations</h4>
 <p>Use upper CamelCase. Compound words, where each word begins with a capital letter, including the first letter.</p>
 <pre><code>var ClassName = function ClassName() {
     // stuff
 };</code></pre>
-<h5 id="constants">Constants</h5>
+<h4 id="constants">Constants</h4>
 <p>Are signified with ALLCAPS and separate words signified by underscores.</p>
 <pre><code>var MY_CONSTANT = 42;</code></pre>
-<h5 id="nested-properties">Nested properties</h5>
-<p>Are best accessed via dot-notation, rather than <code>eval</code> blocks. (Eval is Evil)</p>
-<h5 id="filenames">Filenames</h5>
+<h4 id="accessing-nested-properties">Accessing nested properties</h4>
+<p>Nested, or deep properties are best accessed via dot-notation, rather than <code>eval</code> blocks. (<a href="http://javascriptweblog.wordpress.com/2010/04/19/how-evil-is-eval/">Eval is Evil</a>).
+The only exceptions to this rule are keywords or hyphenated property names, but you shouldn&#39;t be using those anyway!</p>
+<h4 id="filenames">Filenames</h4>
 <p>Use all-lowercase file names, and preferably separate words with dots rather than hyphenating filenames.</p>
-<p><code>my.complicated.filename.js</code> rather than <code>my-complicated-filename.js</code></p>
+<p>Eg.
+<code>my.complicated.filename.js</code> rather than <code>my-complicated-filename.js</code></p>
 </div>
 </div>
 
@@ -250,6 +252,37 @@ anything works. However, there&#39;s always that <em>one weird issue.</em> And f
 <li>End of line comments are prohibited!</li>
 <li>JSDoc style is good, but requires a significant time investment</li>
 </ul>
+</div></div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>5. Follow some simple </small>Best Practice Guidelines.</h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'><h4 id="globals">Globals</h4>
+<p>Don’t use globals. “Global name conflicts are difficult to debug, and can cause intractable problems when two projects try to integrate. In order to make it possible to share common JavaScript code, we’ve adopted conventions to prevent collisions.”</p>
+<h4 id="be-strict">Be Strict</h4>
+<p>In any kind of JavaScript file it is also good to add the declaration:</p>
+<pre><code>&#39;use strict&#39;;</code></pre>
+<p>This will affect both JSHint and your JavaScript engine, which will become less compliant but should execute your JavaScript faster through internal use of a more optimised engine.</p>
+<h4 id="check-for-absolute-equality">Check for absolute equality</h4>
+<p>Use <code>===</code> and <code>!==</code> instead of <code>==</code> and <code>!=</code>. See the post <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">Truth, Equality and Javascript</a> for more information on exactly why you should do this.</p>
+<h4 id="function-parameters-required-optional-values">Function parameters - required &amp; optional values</h4>
+<p>The following words of wisdom should help you write a better structured code in Javascript:</p>
+<ul>
+<li>Keep the number of parameters required by a method to a minimum.</li>
+<li>Required parameters go first.</li>
+<li>Optional parameters go last.</li>
+<li>If there’s more than a single optional parameter, supply the values as an object with the optional values as parameters of that object.</li>
+</ul>
+<p>Thus:</p>
+<pre><code>function myReallyCoolMethod(required, options);</code></pre>
+<p>Is better than:</p>
+<pre><code>function myReallyCoolMethod(required, required, required, optional, maybeoptional, required);</code></pre>
+<p>We can easily guess how that sort of code emerges - but honestly, refactor your code instead of adding new parameters to your functions.</p>
+<h4 id="one-function-one-effect-one-class-one-responsibility-">One function, one effect. One Class, one responsibility.</h4>
+<p>As you develop, your classes and methods should only have one responsibility. Avoid cramming too much functionality into a single class or method, and be wary of creating functions that have side effects without making them explicit.</p>
 </div></div>
 </div>
 

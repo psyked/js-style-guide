@@ -7,7 +7,7 @@ title: JavaScript Style Guide - Summary
         <hr>
     </div>
     <div class='large-12 columns'>{{md 'content/jshint.md'}}</div>
-    <div class='large-12 columns'>{{md 'content/editorconfig.md'}}</div>
+    <!-- <div class='large-12 columns'>{{md 'content/editorconfig.md'}}</div> -->
 </div>
 
 <div class='row'>
@@ -33,6 +33,14 @@ title: JavaScript Style Guide - Summary
         <hr>
     </div>
     <div class='large-12 columns'>{{md 'content/comments.md'}}</div></div>
+</div>
+
+<div class='row'>
+    <div class='large-12 columns'>
+        <h2><small>5. Follow some simple </small>Best Practice Guidelines.</h2>
+        <hr>
+    </div>
+    <div class='large-12 columns'>{{md 'content/bestpractice.md'}}</div></div>
 </div>
 
 <div class='row'>
