@@ -3,7 +3,7 @@ JavaScript Development Guidelines
 
 Live Preview
 ------------
-View the GitHub Pages version of this repo at http://psyked.github.io/js-style-guide/
+View the GitHub Pages version of this repo at http://mmtdigital.github.io/js-style-guide/
 
 Contributing
 ------------
